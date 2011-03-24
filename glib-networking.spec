@@ -1,6 +1,6 @@
 %define name glib-networking
 %define version 2.28.4
-%define release %mkrel 1
+%define release %mkrel 2
 %define libname %mklibname %name
 %define giolibname %mklibname gio2.0_ 0
 Summary: Network-related GIO modules
@@ -16,6 +16,7 @@ BuildRequires: glib2-devel >= 2.27.90
 BuildRequires: libproxy-devel >= 0.3.1
 BuildRequires: gnutls-devel >= 2.1.7
 BuildRequires: libgcrypt-devel
+BuildRequires: gsettings-desktop-schemas-devel
 BuildRequires: intltool
 
 %description
