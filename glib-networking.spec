@@ -1,5 +1,5 @@
 %define name glib-networking
-%define version 2.26.0
+%define version 2.28.4
 %define release %mkrel 1
 %define libname %mklibname %name
 %define giolibname %mklibname gio2.0_ 0
@@ -12,8 +12,10 @@ License: LGPLv2+
 Group:System/Libraries
 Url: http://www.gnome.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: glib2-devel >= 2.25
-BuildRequires: libproxy-devel
+BuildRequires: glib2-devel >= 2.27.90
+BuildRequires: libproxy-devel >= 0.3.1
+BuildRequires: gnutls-devel >= 2.1.7
+BuildRequires: libgcrypt-devel
 BuildRequires: intltool
 
 %description
@@ -21,10 +23,8 @@ This package contains the network-related GIO modules for Glib.
 
 %package -n %libname
 Summary: Network-related GIO modules
-Group:System/Libraries
+Group: System/Libraries
 Requires: %name >= %version-%release
-Requires(post): %giolibname >= 2.23.4-2mdv
-Requires(postun): %giolibname >= 2.23.4-2mdv
 
 %description -n %libname
 This package contains the network-related GIO modules for Glib.
@@ -45,27 +45,12 @@ rm -f %buildroot%_libdir/gio/modules/*.la
 %clean
 rm -rf %{buildroot}
 
-%post -n %{libname}
-%if %_lib != lib
- %{_bindir}/gio-querymodules-64 %{_libdir}/gio/modules 
-%else
- %{_bindir}/gio-querymodules-32 %{_libdir}/gio/modules
-%endif
-
-%postun -n %{libname}
-if [ "$1" = "0" ]; then
-%if %_lib != lib
- %{_bindir}/gio-querymodules-64 %{_libdir}/gio/modules 
-%else
- %{_bindir}/gio-querymodules-32 %{_libdir}/gio/modules
-%endif
-fi
-
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README
 
-
 %files -n %libname
 %defattr(-,root,root)
-%_libdir/gio/modules/libgiolibproxy.so
+%_libdir/gio/modules/*.so
+%_libexecdir/glib-pacrunner
+%_datadir/dbus-1/services/*.service
