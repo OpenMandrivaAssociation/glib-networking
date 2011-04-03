@@ -1,8 +1,8 @@
 %define name glib-networking
 %define version 2.28.4
-%define release %mkrel 2
+%define release %mkrel 3
 %define libname %mklibname %name
-%define giolibname %mklibname gio2.0_ 0
+
 Summary: Network-related GIO modules
 Name: %{name}
 Version: %{version}
@@ -18,6 +18,7 @@ BuildRequires: gnutls-devel >= 2.1.7
 BuildRequires: libgcrypt-devel
 BuildRequires: gsettings-desktop-schemas-devel
 BuildRequires: intltool
+Requires: %libname = %version
 
 %description
 This package contains the network-related GIO modules for Glib.
