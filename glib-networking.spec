@@ -1,6 +1,6 @@
 %define name glib-networking
 %define version 2.28.5
-%define release %mkrel 1
+%define release %mkrel 2
 %define libname %mklibname %name
 
 Summary: Network-related GIO modules
@@ -50,9 +50,9 @@ rm -rf %{buildroot}
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README
+%_libexecdir/glib-pacrunner
+%_datadir/dbus-1/services/*.service
 
 %files -n %libname
 %defattr(-,root,root)
 %_libdir/gio/modules/*.so
-%_libexecdir/glib-pacrunner
-%_datadir/dbus-1/services/*.service
