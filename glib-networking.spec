@@ -1,6 +1,6 @@
 %define name glib-networking
-%define version 2.28.5
-%define release %mkrel 2
+%define version 2.28.6
+%define release %mkrel 1
 %define libname %mklibname %name
 
 Summary: Network-related GIO modules
