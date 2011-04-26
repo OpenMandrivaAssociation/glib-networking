@@ -1,5 +1,5 @@
 %define name glib-networking
-%define version 2.28.6
+%define version 2.28.6.1
 %define release %mkrel 1
 %define libname %mklibname %name
 
