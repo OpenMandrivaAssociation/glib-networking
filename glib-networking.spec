@@ -1,17 +1,16 @@
 %define name glib-networking
-%define version 2.28.7
-%define release %mkrel 1
+%define version 2.30.2
+%define release 1
 %define libname %mklibname %name
 
 Summary: Network-related GIO modules
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 License: LGPLv2+
 Group:System/Libraries
 Url: http://www.gnome.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: glib2-devel >= 2.27.90
 BuildRequires: libproxy-devel >= 0.3.1
 BuildRequires: gnutls-devel >= 2.1.7
@@ -39,20 +38,14 @@ This package contains the network-related GIO modules for Glib.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 rm -f %buildroot%_libdir/gio/modules/*.la
 %find_lang %name
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %name.lang
-%defattr(-,root,root)
 %doc README
 %_libexecdir/glib-pacrunner
 %_datadir/dbus-1/services/*.service
 
 %files -n %libname
-%defattr(-,root,root)
 %_libdir/gio/modules/*.so
