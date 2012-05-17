@@ -1,5 +1,3 @@
-%define url_ver %(echo %{version} |cut -d. -f1-2)
-
 %define libname %mklibname %{name}
 
 Summary: Network-related GIO modules
@@ -9,7 +7,7 @@ Release: 1
 License: LGPLv2+
 Group:System/Libraries
 Url: http://www.gnome.org/
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(glib-2.0)
