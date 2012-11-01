@@ -1,13 +1,13 @@
 %define libname %mklibname %{name}
 
-Summary: Network-related GIO modules
-Name: glib-networking
-Version: 2.34.0
-Release: 1
-License: LGPLv2+
-Group:System/Libraries
-Url: http://www.gnome.org/
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Summary:	Network-related GIO modules
+Name:		glib-networking
+Version:	2.34.0
+Release:	1
+License:	LGPLv2+
+Group:		System/Libraries
+Url:		http://www.gnome.org/
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(glib-2.0)
@@ -16,14 +16,15 @@ BuildRequires:	pkgconfig(libproxy-1.0)
 BuildRequires:	pkgconfig(p11-kit-1)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 Requires:	%{libname} = %{version}-%{release}
+Requires:	gsettings-desktop-schemas
 
 %description
 This package contains the network-related GIO modules for Glib.
 
 %package -n %{libname}
-Summary: Network-related GIO modules
-Group: System/Libraries
-Requires: %{name} >= %{version}-%{release}
+Summary:	Network-related GIO modules
+Group:		System/Libraries
+Requires:	%{name} >= %{version}-%{release}
 
 %description -n %{libname}
 This package contains the network-related GIO modules for Glib.
@@ -47,4 +48,3 @@ rm -f %{buildroot}%{_libdir}/gio/modules/*.la
 
 %files -n %{libname}
 %{_libdir}/gio/modules/*.so
-
