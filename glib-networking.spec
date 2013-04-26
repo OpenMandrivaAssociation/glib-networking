@@ -40,7 +40,6 @@ This package contains the network-related GIO modules for Glib.
 
 %install
 %makeinstall_std
-rm -f %{buildroot}%{_libdir}/gio/modules/*.la
 %find_lang %{name}
 
 %files -f %{name}.lang
