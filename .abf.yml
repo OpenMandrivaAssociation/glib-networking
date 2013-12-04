@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   glib-networking-2.34.2.tar.xz: acd2f3012504189d24cf4a0c5d99e50387009b2f
+sources:
+  glib-networking-2.36.2.tar.xz: d4c2accd50ff4769f434cd552734fb2b0b2b3b81
