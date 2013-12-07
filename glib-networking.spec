@@ -4,7 +4,7 @@
 Summary:	Network-related GIO modules
 Name:		glib-networking
 Version:	2.36.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
