@@ -3,8 +3,8 @@
 
 Summary:	Network-related GIO modules
 Name:		glib-networking
-Version:	2.36.2
-Release:	7
+Version:	2.42.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
@@ -35,7 +35,7 @@ This package contains the network-related GIO modules for Glib.
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure --disable-static
 %make
 
 %install
