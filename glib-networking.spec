@@ -3,7 +3,7 @@
 
 Summary:	Network-related GIO modules
 Name:		glib-networking
-Version:	2.46.1
+Version:	2.54.1
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -47,6 +47,7 @@ This package contains the network-related GIO modules for Glib.
 %doc README
 %{_libexecdir}/glib-pacrunner
 %{_datadir}/dbus-1/services/*.service
+%{_prefix}/lib/systemd/user/glib-pacrunner.service
 
 %files -n %{libname}
 %{_libdir}/gio/modules/*.so
