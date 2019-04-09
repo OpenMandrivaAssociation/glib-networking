@@ -11,6 +11,7 @@ Url:		http://www.gnome.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
+BuildRequires:	meson
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
@@ -37,10 +38,11 @@ This package contains the network-related GIO modules for Glib.
 %build
 %configure --disable-static \
 		--with-ca-certificates=/etc/pki/tls/certs/ca-bundle.crt
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 %find_lang %{name}
 
 %files -f %{name}.lang
