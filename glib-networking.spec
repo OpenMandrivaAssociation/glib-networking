@@ -36,8 +36,7 @@ This package contains the network-related GIO modules for Glib.
 %setup -q
 
 %build
-%configure --disable-static \
-		--with-ca-certificates=/etc/pki/tls/certs/ca-bundle.crt
+
 %meson
 %meson_build
 
