@@ -3,14 +3,15 @@
 
 Summary:	Network-related GIO modules
 Name:		glib-networking
-Version:	2.54.1
-Release:	4
+Version:	2.60.1
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
+BuildRequires:	meson
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
@@ -35,12 +36,12 @@ This package contains the network-related GIO modules for Glib.
 %setup -q
 
 %build
-%configure --disable-static \
-		--with-ca-certificates=/etc/pki/tls/certs/ca-bundle.crt
-%make
+
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 %find_lang %{name}
 
 %files -f %{name}.lang
