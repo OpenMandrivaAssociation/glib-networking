@@ -4,11 +4,12 @@
 Summary:	Network-related GIO modules
 Name:		glib-networking
 Version:	2.64.0
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Patch0:		glib-networking-2.64.0-try-harder-to-set-gnutls-priorities.patch
 
 BuildRequires:	intltool
 BuildRequires:	meson
@@ -33,11 +34,10 @@ Requires:	%{name} >= %{version}-%{release}
 This package contains the network-related GIO modules for Glib.
 
 %prep
-%setup -q
+%autosetup -p1
+%meson
 
 %build
-
-%meson
 %meson_build
 
 %install
