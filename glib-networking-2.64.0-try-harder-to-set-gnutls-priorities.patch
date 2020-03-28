@@ -1,0 +1,17 @@
+diff -up glib-networking-2.64.0/tls/gnutls/gtlsconnection-gnutls.c.omv~ glib-networking-2.64.0/tls/gnutls/gtlsconnection-gnutls.c
+--- glib-networking-2.64.0/tls/gnutls/gtlsconnection-gnutls.c.omv~	2020-03-26 18:48:09.275963392 +0100
++++ glib-networking-2.64.0/tls/gnutls/gtlsconnection-gnutls.c	2020-03-26 19:00:23.364527880 +0100
+@@ -1054,7 +1054,12 @@ initialize_gnutls_priority (void)
+ 
+   ret = gnutls_priority_init2 (&priority, "%COMPAT:-VERS-TLS1.1:-VERS-TLS1.0", &error_pos, GNUTLS_PRIORITY_INIT_DEF_APPEND);
+   if (ret != GNUTLS_E_SUCCESS)
+-    g_warning ("Failed to set GnuTLS session priority with error beginning at %s: %s", error_pos, gnutls_strerror (ret));
++    {
++      g_warning ("Failed to set GnuTLS session priority with error beginning at %s: %s", error_pos, gnutls_strerror (ret));
++      ret = gnutls_priority_init2 (&priority, NULL, &error_pos, GNUTLS_PRIORITY_INIT_DEF_APPEND);
++      if (ret != GNUTLS_E_SUCCESS)
++        g_warning ("Failed to set GnuTLS session priority to defaults with error beginning at %s: %s", error_pos, gnutls_strerror (ret));
++    }
+ }
+ 
+ static void
