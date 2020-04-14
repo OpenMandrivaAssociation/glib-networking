@@ -9,7 +9,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
-Patch0:		glib-networking-2.64.0-try-harder-to-set-gnutls-priorities.patch
+#Patch0:		glib-networking-2.64.0-try-harder-to-set-gnutls-priorities.patch
 
 BuildRequires:	intltool
 BuildRequires:	meson
