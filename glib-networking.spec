@@ -4,7 +4,7 @@
 Summary:	Network-related GIO modules
 Name:		glib-networking
 Version:	2.68.1
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
@@ -18,9 +18,9 @@ BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(libproxy-1.0)
 BuildRequires:	pkgconfig(p11-kit-1)
-
 Requires:	%{libname} = %{version}-%{release}
 Requires:	gsettings-desktop-schemas
+Requires:	ca-certificates
 
 %description
 This package contains the network-related GIO modules for Glib.
@@ -48,7 +48,7 @@ This package contains the network-related GIO modules for Glib.
 %doc README
 %{_libexecdir}/glib-pacrunner
 %{_datadir}/dbus-1/services/*.service
-%{_prefix}/lib/systemd/user/glib-pacrunner.service
+%{_userunitdir}/glib-pacrunner.service
 
 %files -n %{libname}
 %{_libdir}/gio/modules/*.so
