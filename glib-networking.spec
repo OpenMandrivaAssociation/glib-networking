@@ -3,7 +3,7 @@
 
 Summary:	Network-related GIO modules
 Name:		glib-networking
-Version:	2.72.1
+Version:	2.72.2
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
