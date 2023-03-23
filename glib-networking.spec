@@ -3,12 +3,12 @@
 
 Summary:	Network-related GIO modules
 Name:		glib-networking
-Version:	2.74.0
-Release:	2
+Version:	2.76.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnome.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/glib-networking/%{url_ver}/%{name}-%{version}.tar.xz
 #Patch0:		glib-networking-2.64.0-try-harder-to-set-gnutls-priorities.patch
 
 BuildRequires:	intltool
