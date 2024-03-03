@@ -14,6 +14,8 @@ Source0:	https://ftp.gnome.org/pub/GNOME/sources/glib-networking/%{url_ver}/%{na
 BuildRequires:	intltool
 BuildRequires:	meson
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gio-2.0)
+BuildRequires:  glib-gir
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(libproxy-1.0)
